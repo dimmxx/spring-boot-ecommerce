@@ -21,6 +21,6 @@ services:
      ports:
         - 8010:8010
      environment:
-        - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5410/angular32
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/angular32
         - SPRING_DATASOURCE_USERNAME=user
         - SPRING_DATASOURCE_USERNAME=remote
