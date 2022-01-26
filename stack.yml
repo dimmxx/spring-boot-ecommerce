@@ -13,11 +13,12 @@ services:
      ports:
         - 5410:5432
 
-  ecommerce:
+  ecommerce-backend:
      image: dimmxx/fullstack-springboot-angular-ecommerce-postgres:latest
      container_name: ecommerce-backend
      ports:
         - 8010:8010
      environment:
         - SPRING_DATASOURCE_URL=jdbc:postgresql://ecommerce-postgresql:5410/angular32
-
+        - SPRING_DATASOURCE_USERNAME=user
+        - SPRING_DATASOURCE_USERNAME=remote
