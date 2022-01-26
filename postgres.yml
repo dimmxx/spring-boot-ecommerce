@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ecommerce-postgresql:
+     image: postgres:latest
+     container_name: ecommerce-postgresql
+     # volumes:
+     #     - ~/volumes/jhipster/schoolservice/postgresql/:/var/lib/postgresql/data/
+     environment:
+        - POSTGRES_DB=angular32
+        - POSTGRES_USER=user
+        - POSTGRES_PASSWORD=remote
+     ports:
+        - 5410:5432
+
