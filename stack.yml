@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.4'
 
 services:
   ecommerce-postgresql:
@@ -7,17 +7,17 @@ services:
      # volumes:
      #     - ~/volumes/jhipster/schoolservice/postgresql/:/var/lib/postgresql/data/
      environment:
-        - POSTGRES_DB=fullstackecommerce
-        - POSTGRES_USER=ecommerce
+        - POSTGRES_DB=angular32
+        - POSTGRES_USER=user
         - POSTGRES_PASSWORD=remote
      ports:
-        - 5455:5432
+        - 5410:5432
 
   ecommerce:
      image: dimmxx/fullstack-springboot-angular-ecommerce-postgres:latest
      container_name: ecommerce-backend
      ports:
-        - 8090:8090
+        - 8010:8010
      environment:
-        - SPRING_DATASOURCE_URL=jdbc:postgresql://ecommerce-postgresql:5455/fullstackecommerce
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://ecommerce-postgresql:5410/angular32
 
