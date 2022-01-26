@@ -1,9 +1,9 @@
 version: '3.4'
 
 services:
-  ecommerce-postgresql:
+  db:
      image: postgres:latest
-     container_name: ecommerce-postgresql
+     container_name: ecommerce-postgresql-db
      # volumes:
      #     - ~/volumes/jhipster/schoolservice/postgresql/:/var/lib/postgresql/data/
      environment:
@@ -15,10 +15,12 @@ services:
 
   ecommerce-backend:
      image: dimmxx/fullstack-springboot-angular-ecommerce-postgres:latest
-     container_name: ecommerce-backend
+     container_name: ecommerce-backend-java
+     depends_on:
+        - db
      ports:
         - 8010:8010
      environment:
-        - SPRING_DATASOURCE_URL=jdbc:postgresql://ecommerce-postgresql:5410/angular32
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5410/angular32
         - SPRING_DATASOURCE_USERNAME=user
         - SPRING_DATASOURCE_USERNAME=remote
